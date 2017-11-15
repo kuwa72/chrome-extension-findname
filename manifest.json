@@ -1,0 +1,26 @@
+{
+  "name": "Findnamine",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Find username in redmine",
+  "homepage_url": "https://github.com/kuwa72/chrome-extension-findname",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "icons/icon19.png"
+  },
+  "permissions": [
+        "tabs",
+        "notifications",
+        "http://*/",
+        "https://*/"
+    ],
+  "background": {
+          "scripts": ["background.js"],
+          "persistent": false
+  }
+}
