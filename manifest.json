@@ -1,8 +1,8 @@
 {
-  "name": "Findnamine",
+  "name": "Select filter",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Find username in redmine",
+  "description": "Filtering select items.",
   "homepage_url": "https://github.com/kuwa72/chrome-extension-findname",
   "icons": {
     "16": "icons/icon16.png",

@@ -1,42 +1,40 @@
-var addedElements = [];
-
 var buttons = document.getElementsByClassName('icon-edit');
 
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", event => {
-    console.log("clicked");
-    window.setTimeout(addSearchTag, 100);
+    window.setTimeout(addSearchFields, 0);
   }, false);
 }
 
-function addSearchTag() {
+function addSearchFields() {
   var ss =  document.getElementsByTagName('select');
   console.log(ss.length);
   for (var i = 0; i < ss.length; i++) {
     var s = ss[i];
-    if (addedElements.includes(s)) {
-      console.log("filled");
-    } else {
+    if (!s.getAttribute('filterinserted')) {
       var txt = document.createElement('input');
       txt.setAttribute("type", "text");
       txt.addEventListener("input", withSelectListener(s, txt));
-      txt.style.width = '4em';
+      txt.style.width = '2em';
       s.parentNode.insertBefore(txt, s);
       var o = s.options;
-      for (var j = 0; j < o.length; j++) {
-        o[j].setAttribute("fnoriginaltext", o[j].text);
-      }
-      addedElements.push(s);
+      s.setAttribute('filterinserted',true);
     }
   }
 }
 
 function withSelectListener(s, t) {
+  var origin = Array.from(s.options);
+  var that = this;
   return function(e) {
-    for (var i = 0; i < s.options.length; i++) {
-      var o = s.options[i];
-      o.disabled = !o.getAttribute("fnoriginaltext").includes(t.value);
-      o.text = o.disabled ? '' : o.getAttribute("fnoriginaltext");
+    s.innerHTML = "";
+    for (var i = 0; i < origin.length; i++) {
+      var o = origin[i];
+      if (o.text.includes(t.value)) {
+        s.appendChild(o);
+      }
     }
   };
 }
+
+addSearchFields();
