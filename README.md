@@ -1,4 +1,5 @@
-# chrome-extension-findname
-Find user in redmine.
+# Select filter.
+This is a chrome extension.
+Add filter to all select boxes in page.
 
-Install from ---
+Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/select-filter/cfndbgamcjlfppbehioihlpinfcheinc?hl=ja)
