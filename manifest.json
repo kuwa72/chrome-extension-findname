@@ -17,10 +17,15 @@
         "tabs",
         "notifications",
         "http://*/",
-        "https://*/"
+        "https://*/",
+	"storage"
     ],
   "background": {
           "scripts": ["background.js"],
           "persistent": false
+  },
+    "options_ui": {
+      "page": "options.html",
+      "browser_style": true
   }
 }
