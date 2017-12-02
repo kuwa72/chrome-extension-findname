@@ -1,6 +1,6 @@
 {
   "name": "Select filter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Filtering select items.",
   "homepage_url": "https://github.com/kuwa72/chrome-extension-findname",
